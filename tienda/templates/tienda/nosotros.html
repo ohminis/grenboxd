@@ -1,0 +1,17 @@
+{% extends 'tienda/base.html' %}
+
+{% block title %}Nosotros - GreenBoxd{% endblock %}
+
+{% block content %}
+<div class="row align-items-center py-5">
+    <div class="col-md-6">
+        <h1 class="display-4 fw-bold text-success mb-3">Nuestra Historia</h1>
+        <p class="lead text-muted">GreenBoxd nació como una verdulería familiar de barrio con un objetivo claro: conectar a los productores locales directamente con la mesa de nuestros vecinos.</p>
+        <p class="text-secondary">Seleccionamos cada fruta y verdura a mano todas las mañanas para garantizar que mantengan la frescura, el sabor y la calidad que nos caracteriza desde el primer día. Ahora, damos el salto digital para que puedas gestionar tus pedidos de forma fácil y rápida.</p>
+        <a href="{% url 'consulta' %}" class="btn btn-success px-4 py-2 mt-3">Hacenos una consulta</a>
+    </div>
+    <div class="col-md-6 text-center mt-4 mt-md-0">
+        <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=600&auto=format&fit=crop&q=60" alt="Verdulería de Barrio" class="img-fluid rounded shadow">
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'tienda/base.html' %}
+
+{% block title %}Registro - GreenBoxd{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow border-0">
+            <div class="card-body p-4">
+                <h2 class="card-title text-center mb-4 fw-bold text-success">Crear Cuenta de Usuario</h2>
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="btn btn-success w-100 mt-3">Registrarse</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

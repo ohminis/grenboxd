@@ -1,0 +1,23 @@
+{% extends 'tienda/base.html' %}
+
+{% block title %}Eliminar Usuario - GreenBoxd{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow border-0 border-top border-danger border-5">
+            <div class="card-body p-4 text-center">
+                <h2 class="card-title fw-bold text-danger mb-3">¿Confirmar Eliminación?</h2>
+                <p class="fs-5">¿Estás completamente seguro de que querés borrar al usuario <strong>"{{ usuario.username }}"</strong> de la base de datos?</p>
+                <p class="text-muted small mb-4">Esta acción no se puede deshacer de ninguna manera.</p>
+                
+                <form method="POST" class="d-inline">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger px-4 me-2">Sí, Eliminar</button>
+                </form>
+                <a href="{% url 'lista_usuarios' %}" class="btn btn-secondary px-4">Cancelar</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

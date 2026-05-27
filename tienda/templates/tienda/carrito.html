@@ -1,0 +1,54 @@
+{% extends 'tienda/base.html' %}
+
+{% block title %}Mi Carrito - GreenBoxd{% endblock %}
+
+{% block content %}
+<div class="card shadow border-0">
+    <div class="card-body p-4">
+        <h2 class="mb-4 fw-bold text-success">Tu Carrito de Compras</h2>
+        
+        {% if carrito %}
+        <div class="table-responsive">
+            <table class="table table-hover align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Foto</th>
+                        <th>Producto</th>
+                        <th>Precio x kg</th>
+                        <th class="text-center">Cantidad</th>
+                        <th>Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in carrito.values %}
+                    <tr>
+                        <td><img src="{{ item.imagen }}" class="rounded" style="width: 50px; height: 50px; object-fit: cover;"></td>
+                        <td><strong>{{ item.nombre }}</strong></td>
+                        <td>${{ item.precio }}</td>
+                        <td class="text-center"><span class="badge bg-secondary fs-6">{{ item.cantidad }} kg</span></td>
+                        <td><strong>${{ item.subtotal }}</strong></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="d-flex justify-content-between align-items-center mt-4 p-3 bg-light rounded shadow-sm">
+            <h4 class="mb-0 fw-bold">Total del Pedido:</h4>
+            <span class="fs-3 fw-bold text-success">${{ total }}</span>
+        </div>
+        
+        <div class="d-flex justify-content-between mt-4">
+            <a href="{% url 'limpiar_carrito' %}" class="btn btn-outline-danger">Vaciar Carrito</a>
+            <a href="/" class="btn btn-success px-4">Seguir Comprando</a>
+        </div>
+        
+        {% else %}
+        <div class="text-center py-5">
+            <p class="fs-4 text-muted">Tu carrito está vacío actualmente.</p>
+            <a href="/" class="btn btn-success mt-2">Volver a las ofertas</a>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
