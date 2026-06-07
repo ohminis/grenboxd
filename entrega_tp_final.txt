@@ -1,0 +1,13 @@
+Nombre Completo: [Escribe tu nombre aquí]
+DNI: [Escribe tu DNI aquí]
+
+Descripción del Proyecto:
+Este proyecto es una aplicación web desarrollada con el framework Django para la entrega del Trabajo Práctico Final. 
+
+Funcionalidades principales implementadas:
+1. Formulario de registro de usuario y sistema de autenticación (Login/Logout).
+2. Panel administrativo (CRUD) visible para usuarios registrados para gestionar la base de datos de usuarios.
+3. Consumo de una API externa (fakestoreapi) para mostrar un catálogo de productos con sus respectivos precios en la página de inicio.
+4. Formulario de contacto para enviar consultas (almacenadas en base de datos).
+5. Sistema funcional de carrito de compras implementado mediante sesiones (Session Storage).
+6. Página informativa institucional ("Nosotros").
