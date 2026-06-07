@@ -36,6 +36,13 @@ Es necesario tener instalado Python (versión 3.10 o superior recomendada).
 5. **Acceder a la página:**
    Abre tu navegador web y visita: [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
 
+## Credenciales de Demostración
+
+Para probar las rutas protegidas y el panel CRUD de usuarios sin necesidad de registrar una cuenta nueva, puedes utilizar el siguiente usuario demo ya pre-creado en la base de datos:
+
+- **Usuario:** `usuario_demo`
+- **Contraseña:** `GreenBox2026!`
+
 ## Funcionalidades
 - **Registro e Ingreso:** Los usuarios pueden crear una cuenta y acceder a zonas protegidas.
 - **Catálogo API:** Se muestran productos consumiendo una API externa en tiempo real.
