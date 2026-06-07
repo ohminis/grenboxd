@@ -26,14 +26,14 @@ def inicio(request):
                 "Zanahorias Asadas"
             ]
             
-            # URLs estables de Pixabay / Unsplash Source optimizadas
+            # URLs estables de Unsplash optimizadas y libres de bloqueos de hotlinking
             imagenes_verduleria = [
-                "https://cdn.pixabay.com/photo/2011/03/16/16/01/tomatoes-5356_250.jpg",
-                "https://cdn.pixabay.com/photo/2014/08/06/20/32/potatoes-411975_250.jpg",
-                "https://cdn.pixabay.com/photo/2016/01/03/05/20/bananas-1119047_250.jpg",
-                "https://cdn.pixabay.com/photo/2016/08/12/22/34/apple-1589874_250.jpg",
-                "https://cdn.pixabay.com/photo/2016/03/05/19/14/salad-1238318_250.jpg",
-                "https://cdn.pixabay.com/photo/2016/08/03/17/29/carrots-1567195_250.jpg"
+                "https://images.unsplash.com/photo-1592924357228-91a4daadcfea?q=80&w=600&auto=format&fit=crop",  # Tomates
+                "https://images.unsplash.com/photo-1518977676601-b53f82aba655?q=80&w=600&auto=format&fit=crop",  # Papas
+                "https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?q=80&w=600&auto=format&fit=crop",  # Bananas
+                "https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?q=80&w=600&auto=format&fit=crop",  # Manzanas
+                "https://images.unsplash.com/photo-1556801712-76c8eb07bbc9?q=80&w=600&auto=format&fit=crop",  # Lechuga
+                "https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?q=80&w=600&auto=format&fit=crop"   # Zanahorias
             ]
             
             for i, prod in enumerate(api_productos):
