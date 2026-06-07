@@ -41,3 +41,11 @@ Es necesario tener instalado Python (versión 3.10 o superior recomendada).
 - **Catálogo API:** Se muestran productos consumiendo una API externa en tiempo real.
 - **Consultas:** Formulario para enviar mensajes al sistema.
 - **CRUD Usuarios:** Un área protegida donde se pueden ver, editar y eliminar usuarios registrados.
+
+## Pruebas Automatizadas (QA)
+El proyecto incluye un conjunto de **14 pruebas automatizadas (Tests Integrales)** que validan de forma estricta el cumplimiento de los requerimientos funcionales (autenticación, gestión de la base de datos, carrito de compra basado en sesiones, protección de rutas mediante decoradores y consumo de la API externa).
+
+Para ejecutar y validar estos tests de forma local, simplemente utiliza el siguiente comando en la consola:
+```bash
+python manage.py test
+```
