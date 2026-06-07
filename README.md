@@ -43,6 +43,12 @@ Para probar las rutas protegidas y el panel CRUD de usuarios sin necesidad de re
 - **Usuario:** `usuario_demo`
 - **Contraseña:** `GreenBox2026!`
 
+### Panel de Administración de Django
+Para visualizar y administrar directamente toda la base de datos (usuarios, consultas, etc.) desde la consola de administración de Django, puedes acceder a [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/) con las siguientes credenciales de superusuario:
+
+- **Usuario:** `admin`
+- **Contraseña:** `Admin2026!`
+
 ## Funcionalidades
 - **Registro e Ingreso:** Los usuarios pueden crear una cuenta y acceder a zonas protegidas.
 - **Catálogo API:** Se muestran productos consumiendo una API externa en tiempo real.
