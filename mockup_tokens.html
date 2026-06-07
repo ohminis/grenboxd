@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>GreenBox - App Mockup</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+          /* COLORES */
+          --color-primary-dark:    #0F5238;
+          --color-primary:         #2D6A4F;
+          --color-primary-medium:  #40916C;
+          --color-primary-light:   #A8E7C5;
+          --color-accent:          #C1440E;
+          --color-accent-light:    #F9DDD3;
+          --color-dark:            #191C1D;
+          --color-neutral-dark:    #404943;
+          --color-neutral-mid:     #707973;
+          --color-neutral-warm:    #705B43;
+          --color-surface-light:   #E7E8E9;
+          --color-surface-off:     #F8F9FA;
+          --color-surface-cream:   #FAF9F5;
+          --color-white:           #FFFFFF;
+          --color-page-bg:         #F5F5F5;
+
+          /* TIPOGRAFÍA */
+          --font-family-base: 'Inter', system-ui, -apple-system, sans-serif;
+          --text-display:     2rem;
+          --text-heading-1:   1.5rem;
+          --text-heading-2:   1.25rem;
+          --text-body-lg:     1rem;
+          --text-body:        0.875rem;
+          --text-label:       0.75rem;
+          --text-caption:     0.6875rem;
+
+          --font-weight-bold:    700;
+          --font-weight-semibold:600;
+          --font-weight-medium:  500;
+          --font-weight-regular: 400;
+
+          --line-height-tight:   1.2;
+          --line-height-snug:    1.35;
+          --line-height-normal:  1.5;
+
+          /* ESPACIADO & RADIUS */
+          --space-xs:  0.25rem;
+          --space-sm:  0.5rem;
+          --space-md:  0.75rem;
+          --space-lg:  1rem;
+          --space-xl:  1.5rem;
+          --space-2xl: 2rem;
+
+          --radius-sm:   0.25rem;
+          --radius-md:   0.5rem;
+          --radius-lg:   0.75rem;
+          --radius-xl:   1rem;
+          --radius-full: 9999px;
+
+          /* SOMBRAS */
+          --shadow-elevation-1: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+          --shadow-card:        0 2px 8px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.05);
+
+          /* LAYOUT */
+          --screen-mobile:   390px;
+          --padding-screen:  var(--space-xl);
+          --height-topbar:   56px;
+          --height-bottomnav:64px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family-base);
+            background-color: var(--color-page-bg);
+            color: var(--color-dark);
+            -webkit-font-smoothing: antialiased;
+            /* Simulación de dispositivo móvil centrado */
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .mobile-app {
+            width: 100%;
+            max-width: var(--screen-mobile);
+            background-color: var(--color-surface-cream);
+            height: 100vh;
+            position: relative;
+            overflow-y: auto;
+            overflow-x: hidden;
+            box-shadow: 0 0 40px rgba(0,0,0,0.1);
+        }
+
+        /* Top Bar */
+        .topbar {
+            height: var(--height-topbar);
+            background-color: var(--color-primary-dark);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 var(--padding-screen);
+            color: var(--color-white);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .topbar-title {
+            font-size: var(--text-body-lg);
+            font-weight: var(--font-weight-semibold);
+        }
+
+        .topbar-icon {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* Contenido Principal */
+        .content {
+            padding: var(--space-lg) var(--padding-screen);
+            padding-bottom: calc(var(--height-bottomnav) + var(--space-xl));
+        }
+
+        .section-title {
+            font-size: var(--text-heading-2);
+            font-weight: var(--font-weight-bold);
+            color: var(--color-primary);
+            margin-bottom: var(--space-md);
+            margin-top: var(--space-lg);
+        }
+
+        /* Tarjeta de Producto (Horizontal List) */
+        .card {
+            background-color: var(--color-white);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-card);
+            padding: var(--space-md);
+            display: flex;
+            gap: var(--space-md);
+            margin-bottom: var(--space-md);
+            align-items: center;
+        }
+
+        .card-img-placeholder {
+            width: 80px;
+            height: 80px;
+            border-radius: var(--radius-md);
+            background-color: var(--color-surface-light);
+            object-fit: cover;
+        }
+
+        .card-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-xs);
+        }
+
+        .card-title {
+            font-size: var(--text-body);
+            font-weight: var(--font-weight-semibold);
+            line-height: var(--line-height-tight);
+        }
+
+        .card-desc {
+            font-size: var(--text-label);
+            color: var(--color-neutral-mid);
+        }
+
+        .card-price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: var(--space-xs);
+        }
+
+        .price {
+            font-size: var(--text-body-lg);
+            font-weight: var(--font-weight-bold);
+            color: var(--color-primary-dark);
+        }
+
+        /* Badges */
+        .badge {
+            font-size: var(--text-caption);
+            font-weight: var(--font-weight-bold);
+            padding: 2px 8px;
+            border-radius: var(--radius-sm);
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .badge-offer {
+            background-color: var(--color-accent-light);
+            color: var(--color-accent);
+        }
+
+        .badge-success {
+            background-color: var(--color-primary-light);
+            color: var(--color-primary-dark);
+        }
+
+        /* Botón CTA Pequeño */
+        .btn-add {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            border: none;
+            border-radius: var(--radius-full);
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: var(--shadow-elevation-1);
+        }
+
+        /* Categorías (Chips) */
+        .chips-container {
+            display: flex;
+            gap: var(--space-sm);
+            overflow-x: auto;
+            padding-bottom: var(--space-sm);
+            margin-bottom: var(--space-md);
+        }
+        .chips-container::-webkit-scrollbar { display: none; }
+
+        .chip {
+            background-color: var(--color-surface-off);
+            border: 1px solid var(--color-surface-light);
+            color: var(--color-neutral-dark);
+            padding: var(--space-sm) var(--space-lg);
+            border-radius: var(--radius-full);
+            font-size: var(--text-body);
+            font-weight: var(--font-weight-medium);
+            white-space: nowrap;
+        }
+
+        .chip.active {
+            background-color: var(--color-primary-dark);
+            color: var(--color-white);
+            border-color: var(--color-primary-dark);
+        }
+
+        /* Bottom Nav */
+        .bottomnav {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: var(--height-bottomnav);
+            background-color: var(--color-white);
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border-top-left-radius: var(--radius-xl);
+            border-top-right-radius: var(--radius-xl);
+        }
+
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            color: var(--color-neutral-mid);
+            font-size: var(--text-caption);
+            font-weight: var(--font-weight-medium);
+        }
+
+        .nav-item.active {
+            color: var(--color-primary-dark);
+        }
+
+        .nav-item svg {
+            width: 24px;
+            height: 24px;
+            stroke: currentColor;
+            stroke-width: 2;
+            fill: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="mobile-app">
+        <!-- Topbar -->
+        <div class="topbar">
+            <svg class="topbar-icon" viewBox="0 0 24 24"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+            <div class="topbar-title">GreenBox</div>
+            <svg class="topbar-icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            
+            <h2 class="section-title" style="margin-top:0;">Categorías</h2>
+            <div class="chips-container">
+                <div class="chip active">Todos</div>
+                <div class="chip">Frutas</div>
+                <div class="chip">Verduras</div>
+                <div class="chip">Orgánicos</div>
+            </div>
+
+            <h2 class="section-title">Destacados</h2>
+            
+            <!-- Card 1 (Oferta) -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=200&h=200&fit=crop" class="card-img-placeholder" alt="Tomates">
+                <div class="card-info">
+                    <div>
+                        <span class="badge badge-offer">Oferta -15%</span>
+                    </div>
+                    <div class="card-title">Tomates Orgánicos</div>
+                    <div class="card-desc">Cajón de 5 kg</div>
+                    <div class="card-price-row">
+                        <span class="price">$12.50</span>
+                        <button class="btn-add">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=200&h=200&fit=crop" class="card-img-placeholder" alt="Papas">
+                <div class="card-info">
+                    <div>
+                        <span class="badge badge-success">Recién cosechado</span>
+                    </div>
+                    <div class="card-title">Papas Rústicas</div>
+                    <div class="card-desc">Bolsa de 3 kg</div>
+                    <div class="card-price-row">
+                        <span class="price">$8.20</span>
+                        <button class="btn-add">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=200&h=200&fit=crop" class="card-img-placeholder" alt="Bananas">
+                <div class="card-info">
+                    <div class="card-title">Bananas Ecuador</div>
+                    <div class="card-desc">Racimo grande</div>
+                    <div class="card-price-row">
+                        <span class="price">$5.99</span>
+                        <button class="btn-add">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bottom Navigation -->
+        <div class="bottomnav">
+            <div class="nav-item active">
+                <svg><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                Inicio
+            </div>
+            <div class="nav-item">
+                <svg><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                Carrito
+            </div>
+            <div class="nav-item">
+                <svg><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                Perfil
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+/* ============================================================
+   GreenBox 🌿 — Design Tokens
+   Versión: 1.1.0
+   Extraído desde proyecto Figma "greenbox"
+   ============================================================ */
+
+:root {
+
+  /* ----------------------------------------------------------
+     🎨 COLOR — Primarios (Verde GreenBox)
+  ---------------------------------------------------------- */
+  --color-primary-dark:    #0F5238;   /* rgb(15, 82, 56)   — CTA, nav activo */
+  --color-primary:         #2D6A4F;   /* rgb(45, 106, 79)  — Hero, secciones */
+  --color-primary-medium:  #40916C;   /* rgb(64, 145, 108) — Badges éxito   */
+  --color-primary-light:   #A8E7C5;   /* rgb(168, 231, 197)— Tags, chips     */
+
+  /* ----------------------------------------------------------
+     🎨 COLOR — Acento (uso restringido)
+     ⚠️  Máximo 10% de la interfaz. Solo para: badges de oferta/
+         descuento, banners promocionales, íconos de alerta leve.
+         NUNCA en: botones principales, navegación, texto de cuerpo,
+         fondos de sección, ni en combinación con --color-primary-dark.
+  ---------------------------------------------------------- */
+  --color-accent:          #C1440E;   /* rgb(193, 68, 14)  — Terracota, oferta */
+  --color-accent-light:    #F9DDD3;   /* rgb(249, 221, 211)— Fondo de badge acento */
+
+  /* ----------------------------------------------------------
+     🎨 COLOR — Neutros
+  ---------------------------------------------------------- */
+  --color-dark:            #191C1D;   /* rgb(25, 28, 29)   — Texto principal */
+  --color-neutral-dark:    #404943;   /* rgb(64, 73, 67)   — Subtítulos      */
+  --color-neutral-mid:     #707973;   /* rgb(112, 121, 115)— Placeholders    */
+  --color-neutral-warm:    #705B43;   /* rgb(112, 91, 67)  — Catálogo kraft  */
+  --color-surface-light:   #E7E8E9;   /* rgb(231, 232, 233)— Bordes, inputs  */
+  --color-surface-off:     #F8F9FA;   /* rgb(248, 249, 250)— Fondo de cards  */
+  --color-surface-cream:   #FAF9F5;   /* rgb(250, 249, 245)— Fondo global    */
+  --color-white:           #FFFFFF;   /* rgb(255, 255, 255)— Cards, modales  */
+  --color-page-bg:         #F5F5F5;   /* rgb(245, 245, 245)— Canvas Figma    */
+
+  /* ----------------------------------------------------------
+     ✍️ TIPOGRAFÍA — Familia
+  ---------------------------------------------------------- */
+  --font-family-base: 'Inter', system-ui, -apple-system, sans-serif;
+
+  /* ----------------------------------------------------------
+     ✍️ TIPOGRAFÍA — Tamaños
+  ---------------------------------------------------------- */
+  --text-display:     2rem;      /* 32px — Hero title         */
+  --text-heading-1:   1.5rem;    /* 24px — Títulos de sección */
+  --text-heading-2:   1.25rem;   /* 20px — Subtítulos         */
+  --text-body-lg:     1rem;      /* 16px — Descripción        */
+  --text-body:        0.875rem;  /* 14px — Body general       */
+  --text-label:       0.75rem;   /* 12px — Chips, nav         */
+  --text-caption:     0.6875rem; /* 11px — Meta, hints        */
+
+  /* ----------------------------------------------------------
+     ✍️ TIPOGRAFÍA — Pesos
+  ---------------------------------------------------------- */
+  --font-weight-bold:    700;
+  --font-weight-semibold:600;
+  --font-weight-medium:  500;
+  --font-weight-regular: 400;
+
+  /* ----------------------------------------------------------
+     ✍️ TIPOGRAFÍA — Line Heights
+  ---------------------------------------------------------- */
+  --line-height-tight:   1.2;
+  --line-height-snug:    1.35;
+  --line-height-normal:  1.5;
+  --line-height-relaxed: 1.6;
+
+  /* ----------------------------------------------------------
+     📐 ESPACIADO (base: 8px)
+  ---------------------------------------------------------- */
+  --space-xs:        0.25rem;   /* 4px  */
+  --space-sm:        0.5rem;    /* 8px  */
+  --space-md:        0.75rem;   /* 12px */
+  --space-lg:        1rem;      /* 16px */
+  --space-xl:        1.5rem;    /* 24px */
+  --space-2xl:       2rem;      /* 32px */
+  --space-3xl:       3rem;      /* 48px */
+  --space-section-v: 6rem;      /* 96px */
+
+  /* ----------------------------------------------------------
+     🔲 BORDER RADIUS
+  ---------------------------------------------------------- */
+  --radius-sm:   0.25rem;  /* 4px    — Inputs, divisores      */
+  --radius-md:   0.5rem;   /* 8px    — Chips, badges          */
+  --radius-lg:   0.75rem;  /* 12px   — Botones CTA            */
+  --radius-xl:   1rem;     /* 16px   — Cards, drawer          */
+  --radius-full: 9999px;   /* pill   — Avatars, íconos circ.  */
+
+  /* ----------------------------------------------------------
+     🌫️ SOMBRAS
+  ---------------------------------------------------------- */
+  --shadow-elevation-1: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+  --shadow-card:        0 2px 8px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.05);
+  --shadow-modal:       0 8px 24px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.08);
+
+  /* ----------------------------------------------------------
+     📱 LAYOUT — Grid móvil (390px)
+  ---------------------------------------------------------- */
+  --screen-mobile:   390px;
+  --padding-screen:  var(--space-xl);  /* 24px padding horizontal */
+  --height-topbar:   56px;
+  --height-bottomnav:64px;
+
+  /* ----------------------------------------------------------
+     ⏱️ TRANSICIONES
+  ---------------------------------------------------------- */
+  --transition-fast:   150ms ease;
+  --transition-base:   250ms ease;
+  --transition-slow:   400ms ease;
+}

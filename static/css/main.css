@@ -1,0 +1,138 @@
+/* main.css - Web Layout based on GreenBox Tokens */
+
+body {
+    font-family: var(--font-family-base);
+    background-color: var(--color-surface-cream);
+    color: var(--color-dark);
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Navbar Web Corporativo */
+.navbar-custom {
+    background-color: var(--color-primary-dark) !important;
+    padding: var(--space-md) var(--space-xl);
+    box-shadow: var(--shadow-elevation-1);
+}
+
+.navbar-custom .navbar-brand {
+    font-weight: var(--font-weight-bold);
+    color: var(--color-white) !important;
+    font-size: var(--text-heading-2);
+}
+
+.navbar-custom .nav-link {
+    color: var(--color-surface-off) !important;
+    font-size: var(--text-body);
+    font-weight: var(--font-weight-medium);
+    transition: var(--transition-fast);
+}
+
+.navbar-custom .nav-link:hover {
+    color: var(--color-white) !important;
+    opacity: 0.8;
+}
+
+/* Botones */
+.btn-custom-primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border-radius: var(--radius-full);
+    padding: var(--space-sm) var(--space-lg);
+    font-weight: var(--font-weight-semibold);
+    border: none;
+    box-shadow: var(--shadow-elevation-1);
+    transition: var(--transition-base);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-custom-primary:hover {
+    background-color: var(--color-primary-medium);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-card);
+    color: var(--color-white);
+}
+
+.btn-custom-danger {
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    border-radius: var(--radius-full);
+    padding: var(--space-sm) var(--space-lg);
+    font-weight: var(--font-weight-semibold);
+    border: none;
+    text-decoration: none;
+}
+
+/* Tarjetas Grid (Web) */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-xl);
+    margin-top: var(--space-xl);
+}
+
+.card-product {
+    background-color: var(--color-white);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-card);
+    overflow: hidden;
+    transition: var(--transition-base);
+    border: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-product:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-modal);
+}
+
+.card-product img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-product-body {
+    padding: var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.card-product-title {
+    font-size: var(--text-heading-2);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary-dark);
+    margin-bottom: var(--space-xs);
+}
+
+.card-product-price {
+    font-size: var(--text-heading-1);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary);
+    margin-top: auto;
+    margin-bottom: var(--space-md);
+}
+
+/* Badges */
+.badge-offer {
+    background-color: var(--color-accent-light);
+    color: var(--color-accent);
+    border-radius: var(--radius-md);
+    padding: var(--space-xs) var(--space-sm);
+    font-size: var(--text-caption);
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: var(--space-xs);
+}
+
+/* Títulos Generales */
+.section-title {
+    font-size: var(--text-display);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary-dark);
+    margin-bottom: var(--space-lg);
+    margin-top: var(--space-2xl);
+}
