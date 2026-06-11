@@ -1,0 +1,14 @@
+# Python Compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Django local database (optional, but since we decided to track it we can keep it out, or if we want to keep it tracked we don't put db.sqlite3 here)
+# db.sqlite3
+
+# IDEs and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
