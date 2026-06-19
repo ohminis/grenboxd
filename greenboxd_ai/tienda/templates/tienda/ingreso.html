@@ -1,0 +1,28 @@
+{% extends 'tienda/base.html' %}
+
+{% block title %}Ingresar - GreenBox AI{% endblock %}
+
+{% block content %}
+<div class="form-card">
+    <h2>Ingreso de Usuario</h2>
+    <form method="POST">
+        {% csrf_token %}
+        
+        {% for field in form %}
+            <div class="form-group">
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {{ field }}
+                {% if field.errors %}
+                    <span style="color: var(--accent-orange); font-size: 0.85rem;">{{ field.errors.0 }}</span>
+                {% endif %}
+            </div>
+        {% endfor %}
+        
+        <button type="submit" class="btn-custom btn-primary-custom" style="width: 100%; margin-top: 1rem;">Ingresar al Sitio</button>
+    </form>
+    <div style="text-align: center; margin-top: 1.5rem;">
+        <span style="color: var(--text-light);">¿No tenés una cuenta?</span> 
+        <a href="{% url 'registro' %}" style="color: var(--accent-green); text-decoration: none; font-weight: 600; margin-left: 5px;">Registrate acá</a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}GreenBox AI{% endblock %}</title>
+    <!-- Google Fonts Outfit & Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <!-- Estilos Premium -->
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+<body>
+
+    <nav class="navbar-custom">
+        <a href="/" class="brand">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            GreenBox <span style="font-family: 'Outfit'; font-size: 0.9rem; font-weight: 600; background: var(--accent-orange); color: #fff; padding: 2px 8px; border-radius: 20px; margin-left: 5px;">AI</span>
+        </a>
+        <div class="nav-links">
+            <a href="/">Inicio</a>
+            <a href="{% url 'nosotros' %}">Nosotros</a>
+            <a href="{% url 'consulta' %}">Contacto</a>
+            <a href="{% url 'ver_carrito' %}">Carrito</a>
+            {% if user.is_authenticated %}
+                <span class="badge-custom badge-success" style="margin-left: 10px;">Hola, {{ user.username }}</span>
+                <a href="{% url 'lista_usuarios' %}">Panel CRUD</a>
+                <a href="{% url 'salir' %}" style="color: var(--accent-orange);">Salir</a>
+            {% else %}
+                <a href="{% url 'ingreso' %}">Ingresar</a>
+                <a href="{% url 'registro' %}" class="btn-custom btn-primary-custom" style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">Registrarse</a>
+            {% endif %}
+        </div>
+    </nav>
+
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+</body>
+</html>

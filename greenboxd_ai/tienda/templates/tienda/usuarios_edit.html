@@ -1,0 +1,28 @@
+{% extends 'tienda/base.html' %}
+
+{% block title %}Editar Usuario - GreenBox AI{% endblock %}
+
+{% block content %}
+<div class="form-card">
+    <h2>Editar Datos de {{ usuario.username }}</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <label class="form-label">Nombre</label>
+            <input type="text" name="first_name" class="form-control" value="{{ usuario.first_name }}">
+        </div>
+        <div class="form-group">
+            <label class="form-label">Apellido</label>
+            <input type="text" name="last_name" class="form-control" value="{{ usuario.last_name }}">
+        </div>
+        <div class="form-group">
+            <label class="form-label">Email</label>
+            <input type="email" name="email" class="form-control" value="{{ usuario.email }}">
+        </div>
+        <button type="submit" class="btn-custom btn-primary-custom" style="width: 100%; margin-top: 1rem;">Guardar Cambios</button>
+    </form>
+    <div style="text-align: center; margin-top: 1.5rem;">
+        <a href="{% url 'lista_usuarios' %}" style="color: var(--text-light); text-decoration: none; font-size: 0.9rem;">Cancelar y volver</a>
+    </div>
+</div>
+{% endblock %}

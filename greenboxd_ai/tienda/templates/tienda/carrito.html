@@ -1,0 +1,52 @@
+{% extends 'tienda/base.html' %}
+
+{% block title %}Mi Carrito - GreenBox AI{% endblock %}
+
+{% block content %}
+<div class="form-card" style="max-width: 900px;">
+    <h2 style="margin-bottom: 2rem;">Tu Carrito de Compras</h2>
+    
+    {% if carrito %}
+    <div class="table-responsive">
+        <table class="table-custom">
+            <thead>
+                <tr>
+                    <th>Foto</th>
+                    <th>Producto</th>
+                    <th>Precio x kg</th>
+                    <th style="text-align: center;">Cantidad</th>
+                    <th>Subtotal</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in carrito.values %}
+                <tr>
+                    <td><img src="{{ item.imagen }}" style="width: 50px; height: 50px; object-fit: cover; border-radius: var(--radius-md);"></td>
+                    <td><strong>{{ item.nombre }}</strong></td>
+                    <td>${{ item.precio }}</td>
+                    <td style="text-align: center;"><span class="badge-custom badge-success">{{ item.cantidad }} kg</span></td>
+                    <td><strong>${{ item.subtotal }}</strong></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="cart-summary">
+        <span class="cart-total-label">Total del Pedido:</span>
+        <span class="cart-total-price">${{ total }}</span>
+    </div>
+    
+    <div style="display: flex; justify-content: space-between; margin-top: 2rem; gap: 1rem;">
+        <a href="{% url 'limpiar_carrito' %}" class="btn-custom btn-secondary-custom" style="border-color: #c93b2b; color: #c93b2b;">Vaciar Carrito</a>
+        <a href="/" class="btn-custom btn-primary-custom">Seguir Comprando</a>
+    </div>
+    
+    {% else %}
+    <div style="text-align: center; padding: 4rem 2rem;">
+        <p style="font-size: 1.3rem; color: var(--text-light); margin-bottom: 2rem;">Tu carrito está vacío actualmente.</p>
+        <a href="/" class="btn-custom btn-primary-custom">Volver al inicio</a>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'tienda/base.html' %}
+
+{% block title %}Panel CRUD - GreenBox AI{% endblock %}
+
+{% block content %}
+<div class="form-card" style="max-width: 1000px; padding: 2rem;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+        <h2 style="margin-bottom: 0; font-size: 2rem;">Control de Usuarios Registrados</h2>
+        <a href="{% url 'registro' %}" class="btn-custom btn-primary-custom" style="padding: 0.6rem 1.2rem; font-size: 0.9rem;">+ Registrar Nuevo</a>
+    </div>
+    
+    <div class="table-responsive">
+        <table class="table-custom">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Email</th>
+                    <th style="text-align: center;">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for u in usuarios %}
+                <tr>
+                    <td><strong>{{ u.username }}</strong></td>
+                    <td>{{ u.first_name|default:"-" }}</td>
+                    <td>{{ u.last_name|default:"-" }}</td>
+                    <td>{{ u.email }}</td>
+                    <td style="text-align: center;">
+                        <a href="{% url 'editar_usuario' u.pk %}" class="btn-custom btn-secondary-custom" style="padding: 0.4rem 1rem; font-size: 0.85rem; margin-right: 5px;">Editar</a>
+                        <a href="{% url 'eliminar_usuario' u.pk %}" class="btn-custom btn-danger-custom" style="padding: 0.4rem 1rem; font-size: 0.85rem;">Eliminar</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

@@ -1,40 +1,62 @@
-# TP Final Django
+# TP Final Django - GreenBox
 
 Este proyecto es la entrega final del curso de Django. Consiste en una aplicación web que simula una tienda en línea con funcionalidades de autenticación, consumo de APIs y gestión de usuarios.
+
+El repositorio contiene **dos versiones independientes** del proyecto para cumplir con todos los requerimientos de la entrega:
+1. **Versión Manual (Directorio Raíz)**: Implementada de forma tradicional con Bootstrap y la estructura base dada en clase.
+2. **Versión Asistida por IA (Carpeta `greenboxd_ai/`)**: Recreada de cero utilizando Inteligencia Artificial, con un diseño premium personalizado (Bento grid, tipografía Outfit e Inter, colores corporativos curados de Figma).
+
+---
 
 ## Requisitos Previos
 Es necesario tener instalado Python (versión 3.10 o superior recomendada).
 
-## Pasos para ejecutar el proyecto
+## Pasos para ejecutar las versiones
 
-1. **Crear y activar el entorno virtual:**
-   ```bash
-   python -m venv venv
-   
-   # En Windows:
-   venv\Scripts\activate
-   # En Mac/Linux:
-   source venv/bin/activate
-   ```
+### Paso 1: Configurar el Entorno Virtual y Dependencias (Común para ambos)
+Crea y activa el entorno virtual en la raíz e instala los paquetes necesarios:
+```bash
+# Crear entorno virtual
+python -m venv venv
 
-2. **Instalar las dependencias del proyecto:**
-   ```bash
-   pip install -r requirements.txt
-   ```
+# Activar en Windows:
+venv\Scripts\activate
+# Activar en Mac/Linux:
+source venv/bin/activate
 
-3. **Ejecutar migraciones de la base de datos:**
-   Asegúrate de estar en el directorio donde se encuentra `manage.py` y ejecuta:
+# Instalar dependencias
+pip install -r requirements.txt
+```
+
+---
+
+### Opción A: Ejecutar la Versión Manual (Tradicional)
+1. **Correr las migraciones (desde la raíz):**
    ```bash
    python manage.py migrate
    ```
-
-4. **Levantar el servidor de desarrollo:**
+2. **Iniciar el servidor:**
    ```bash
    python manage.py runserver
    ```
+3. **Acceder a la página:** Abre tu navegador en [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
 
-5. **Acceder a la página:**
-   Abre tu navegador web y visita: [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
+---
+
+### Opción B: Ejecutar la Versión Asistida por IA (Premium)
+1. **Navegar a la carpeta del proyecto IA:**
+   ```bash
+   cd greenboxd_ai
+   ```
+2. **Correr las migraciones (dentro de `greenboxd_ai`):**
+   ```bash
+   python manage.py migrate
+   ```
+3. **Iniciar el servidor:**
+   ```bash
+   python manage.py runserver
+   ```
+4. **Acceder a la página:** Abre tu navegador en [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
 
 ## Credenciales de Demostración
 
